@@ -1,0 +1,123 @@
+HelloPass runOnFunction: test
+!!block bb has 0 predecessors
+!!block bb has 1 successors
+  %i = alloca i32, align 4
+  %i1 = alloca i32, align 4
+  %i2 = alloca i32, align 4
+  %i3 = alloca i32, align 4
+  %i4 = alloca i32, align 4
+  %i5 = alloca i32, align 4
+  store i32 0, i32* %i, align 4
+This is Store
+  store i32 1, i32* %i2, align 4
+This is Store
+  br label %bb6
+!!block bb6 has 2 predecessors
+!!block bb6 has 2 successors
+  %i7 = load i32, i32* %i, align 4
+This is Load
+  %i8 = add nsw i32 %i7, 1
+Op Code:add
+This is Addition
+	  %i7 = load i32, i32* %i, align 4
+	i32 1
+  store i32 %i8, i32* %i2, align 4
+This is Store
+  %i9 = load i32, i32* %i2, align 4
+This is Load
+  %i10 = load i32, i32* %i1, align 4
+This is Load
+  %i11 = mul nsw i32 %i9, %i10
+Op Code:mul
+This is Multiplication
+	  %i9 = load i32, i32* %i2, align 4
+	  %i10 = load i32, i32* %i1, align 4
+  store i32 %i11, i32* %i2, align 4
+This is Store
+  %i12 = load i32, i32* %i1, align 4
+This is Load
+  %i13 = icmp sgt i32 %i12, 9
+  br i1 %i13, label %bb14, label %bb20
+!!block bb14 has 1 predecessors
+!!block bb14 has 1 successors
+  %i15 = load i32, i32* %i3, align 4
+This is Load
+  %i16 = load i32, i32* %i2, align 4
+This is Load
+  %i17 = mul nsw i32 %i15, %i16
+Op Code:mul
+This is Multiplication
+	  %i15 = load i32, i32* %i3, align 4
+	  %i16 = load i32, i32* %i2, align 4
+  store i32 %i17, i32* %i5, align 4
+This is Store
+  %i18 = load i32, i32* %i5, align 4
+This is Load
+  %i19 = sub nsw i32 %i18, 3
+Op Code:sub
+This is Subtraction
+	  %i18 = load i32, i32* %i5, align 4
+	i32 3
+  store i32 %i19, i32* %i2, align 4
+This is Store
+  br label %bb25
+!!block bb20 has 1 predecessors
+!!block bb20 has 1 successors
+  %i21 = load i32, i32* %i4, align 4
+This is Load
+  %i22 = add nsw i32 %i21, 1
+Op Code:add
+This is Addition
+	  %i21 = load i32, i32* %i4, align 4
+	i32 1
+  store i32 %i22, i32* %i, align 4
+This is Store
+  %i23 = load i32, i32* %i3, align 4
+This is Load
+  %i24 = sdiv i32 %i23, 2
+Op Code:sdiv
+This is Division
+	  %i23 = load i32, i32* %i3, align 4
+	i32 2
+  store i32 %i24, i32* %i4, align 4
+This is Store
+  br label %bb25
+!!block bb25 has 2 predecessors
+!!block bb25 has 1 successors
+  %i26 = load i32, i32* %i1, align 4
+This is Load
+  store i32 %i26, i32* %i, align 4
+This is Store
+  br label %bb27
+!!block bb27 has 1 predecessors
+!!block bb27 has 2 successors
+  %i28 = load i32, i32* %i, align 4
+This is Load
+  %i29 = icmp slt i32 %i28, 9
+  br i1 %i29, label %bb6, label %bb30, !llvm.loop !2
+!!block bb30 has 1 predecessors
+!!block bb30 has 0 successors
+  %i31 = load i32, i32* %i, align 4
+This is Load
+  %i32 = add nsw i32 %i31, 1
+Op Code:add
+This is Addition
+	  %i31 = load i32, i32* %i, align 4
+	i32 1
+  store i32 %i32, i32* %i, align 4
+This is Store
+  ret void
+HelloPass runOnFunction: main
+!!block bb has 0 predecessors
+!!block bb has 0 successors
+  %i = alloca i32, align 4
+  %i2 = alloca i32, align 4
+  %i3 = alloca i8**, align 8
+  store i32 0, i32* %i, align 4
+This is Store
+  store i32 %arg, i32* %i2, align 4
+This is Store
+  store i8** %arg1, i8*** %i3, align 8
+This is Store
+  call void @test()
+  ret i32 0

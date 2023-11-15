@@ -1,0 +1,6 @@
+/mnt/CS201/CS201-F23-Template/Pass/CMakeFiles/intrinsics_gen.dir
+/mnt/CS201/CS201-F23-Template/Pass/CMakeFiles/omp_gen.dir
+/mnt/CS201/CS201-F23-Template/Pass/CMakeFiles/acc_gen.dir
+/mnt/CS201/CS201-F23-Template/Pass/CMakeFiles/HelloPass.dir
+/mnt/CS201/CS201-F23-Template/Pass/CMakeFiles/edit_cache.dir
+/mnt/CS201/CS201-F23-Template/Pass/CMakeFiles/rebuild_cache.dir
